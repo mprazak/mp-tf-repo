@@ -23,6 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
 
+      - name: Validate Azure Connection
+        run: |
+          chmod +x ./validate-azure.sh
+          ./validate-azure.sh
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
         with:
